@@ -12,7 +12,7 @@ pub struct Dummy {
 async fn hello_world() -> Json<Dummy> {
     Json(Dummy {
         id: "1".to_string(),
-        msg: "Hello World".to_string(),
+        msg: "Rust: Hello World".to_string(),
     })
 }
 #[tokio::main]
