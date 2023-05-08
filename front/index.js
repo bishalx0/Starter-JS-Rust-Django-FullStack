@@ -1,10 +1,20 @@
-let msg_header = document.getElementById('msg-from-backend')
-let btn = document.getElementById('btn')
+let msg_header1 = document.getElementById('msg-from-backend-rust')
+let btn1 = document.getElementById('btn1')
+
+let msg_header2 = document.getElementById('msg-from-backend-django')
+let btn2 = document.getElementById('btn2')
 
 
-btn.addEventListener("click", (e) => {
+btn1.addEventListener("click", (e) => {
     fetch("http://localhost:3000/hello")
     .then(resp => resp.json())
-    .then(data => msg_header.innerText = data.msg)
+    .then(data => msg_header1.innerText = data.msg)
+    .catch(err => console.log(err))
+})
+
+btn2.addEventListener("click", (e) => {
+    fetch("http://localhost:8000/hello/")
+    .then(resp => resp.json())
+    .then(data => msg_header2.innerText = data.msg)
     .catch(err => console.log(err))
 })
