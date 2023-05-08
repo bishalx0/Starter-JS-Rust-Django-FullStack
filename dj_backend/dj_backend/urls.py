@@ -21,5 +21,5 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("hello-django/", views.hello),
+    path("hello/", views.hello),
 ]
