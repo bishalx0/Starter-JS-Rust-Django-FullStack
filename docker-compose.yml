@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  rust-backend:
+    build:
+      context: ./back
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+
+  django-backend:
+    build:
+      context: ./dj_backend
+    ports:
+      - 8000:8000
+
+  js-frontend:
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+    ports:
+      - 5555:80
+
