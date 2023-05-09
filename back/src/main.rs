@@ -21,7 +21,7 @@ async fn main() {
         .allow_methods([Method::GET])
         .allow_origin(Any);
     let app = Router::new().route("/hello", get(hello_world)).layer(cors);
-    axum::Server::bind(&"127.0.0.1:3000".parse().unwrap())
+    axum::Server::bind(&"0.0.0.0:3000".parse().unwrap())
         .serve(app.into_make_service())
         .await
         .unwrap();
